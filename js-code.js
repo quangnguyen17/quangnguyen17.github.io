@@ -1,3 +1,5 @@
+
+// DOM is ready
 $(document).ready(function () {
-    $("h1").hide();
+
 });
