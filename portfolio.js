@@ -1,9 +1,4 @@
-
-function setupUI() {
-    console.log($('row'));
-}
-
-// DOM is ready
 $(document).ready(function () {
-    setupUI();
+    console.log("readuy");
+    $("h2").after("This section of webpage is still under construction. :(");
 });
