@@ -1,7 +1,6 @@
 
-
 function setupUI() {
-
+    console.log($('row'));
 }
 
 // DOM is ready
