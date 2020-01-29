@@ -12,29 +12,6 @@
     height: 100vh;
 }
 
-.h-half {
-    height: 50vh;
-}
-
-.h-w-half {
-    height: 20vw;
-    width: 20vw;
-}
-
-.bg-wang {
-    background-image: url(images/bg-wang.jpg);
-    background-size: cover;
-}
-
-.bg-beach {
-    background-image: url(images/beach.jpg);
-    background-size: cover;
-}
-
-.bg-custom {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-#me {
-    object-fit: cover;
+h1, h2, h4 {
+    font-weight: normal;
 }
