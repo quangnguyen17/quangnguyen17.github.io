@@ -4,40 +4,13 @@
     z-index: 5;
 }
 
-.bg-black {
-    background-color: black;
-}
-
 .h-full {
     height: 100vh;
 }
 
-.img-cover {
-    object-fit: cover;
-}
-
-.bg-custom {
+.bg-header {
+    background-image: url(images/bg-wang.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
-
-.bg-wang {
-    background-image: url(images/bg-wang.jpg);
-}
-
-.bg-0 {
-    background-image: url(images/bg-0.jpg);
-}
-
-.bg-1 {
-    background-image: url(images/bg-1.jpg);
-}
-
-.bg-2 {
-    background-image: url(images/bg-2.JPG);
-}
-
-.bg-3 {
-    background-image: url(images/bg-3.JPG);
 }
