@@ -66,42 +66,28 @@ function draw() {
 
         for (var col = 0; col < 20; col++) {
             var waldo = (col == x && row == y) ? "waldo" : "blank";
-            code += `<div class="col bg-${waldo} waldo-hovering m-0 p-0"></div>`;
+            code += `<div class="col bg-${waldo} show-waldo m-0 p-0"></div>`;
         }
 
         code += `</div>`;
     }
 
     $('.game').html(code);
-    $(".bg-waldo").css("opacity", "0");
-    $(".bg-blank").css("opacity", "0");
     $(".bg-waldo").on("click", waldoClicked);
     handleHovering();
 }
 
 function handleHovering() {
-    $('.waldo-hovering').hover(function () {
+    $('.show-waldo').hover(function () {
         $(this).animate({
             opacity: "1",
             height: "+=10",
-        }, 250)
+        }, 300)
     }, function () {
         $(this).animate({
             opacity: "0",
             height: "-=10",
-        }, 250);
-    });
-
-    $('#waldo').hover(function () {
-        $(this).animate({
-            width: "+=10",
-            height: "+=10",
-        }, 150)
-    }, function () {
-        $(this).animate({
-            width: "-=10",
-            height: "-=10",
-        }, 150);
+        }, 300);
     });
 }
 
