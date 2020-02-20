@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap');
+/* IMPORTING FONTS */
+
+* {
+    /* font-family: Helvetica, sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.align-items-center {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.625);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.h-full {
+    height: 100vh;
+}
+
+.dropdown-custom {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+.bg-wang {
+    background: linear-gradient(rgba(0, 0, 0, 0.625), rgba(0, 0, 0, 0.625)), url("images/bg-wang.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 56px;
+}
+
+.bg-work {
+    background: linear-gradient(rgba(0, 0, 0, 0.625), rgba(0, 0, 0, 0.625)), url("images/bg-work.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-skills {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("images/bg-skills.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

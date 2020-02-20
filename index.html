@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -17,122 +16,182 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/8199b614e7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style1.css">
+    <script>
+    </script>
     <title>Quang Nguyen</title>
     <script>
-        $(document).ready(function () {
-            $('.dropdown-item').css("color", "white");
+        $(document).on('click', function (event) {
+            event.preventDefault();
+            href = $(event.target).attr('href');
+            top = $(`${href}`).offset().top;
 
-            $('.dropdown-item').hover(function () {
-                $(this).css("color", "black");
-            }, function () {
-                $(this).css("color", "white");
-            });
-
-            $('.btn-group button').hover(function () {
-                $('.carousel').carousel(parseInt($(this).attr('id'), 10));
-                $(this).addClass('active');
-            }, function () {
-                $(this).removeClass('active');
-            });
-
-            $('.carousel').carousel({
-                interval: 5000
-            });
+            $('html, body').animate({
+                scrollTop: $(href).offset().top - 56
+            }, 1000, 'linear');
         });
     </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark py-3 px-4">
-        <a class="navbar-brand m-0" href="#">Quang Nguyen</a>
-        <div class="btn-group ml-4 bg-clear" role="group">
-            <button id="0" type="button" class="btn btn-outline-light bg-clear px-3">Home</button>
-            <button id="1" type="button" class="btn btn-outline-light bg-clear px-3">My Work</button>
-            <button id="2" type="button" class="btn btn-outline-light bg-clear px-3">About</button>
-        </div>
-        <div class="dropdown ml-auto">
-            <button type="button" class="btn btn-outline-light rounded dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Random </button>
-            <div class="dropdown-menu dropdown-menu-right dropdown-light bg-clear border border-light mt-2">
-                <a class="dropdown-item btn btn-outline-light rounded-0"
-                    href="https://github.com/quangnguyen17">GitHub</a>
-                <a class="dropdown-item btn btn-outline-light rounded-0"
-                    href="https://www.linkedin.com/in/quangnguyen2001/">LinkedIn</a>
-                <a class="dropdown-item btn btn-outline-light rounded-0"
-                    href="https://www.instagram.com/quangd_nguyen/">Instagram</a>
-                <a class="dropdown-item btn btn-outline-light rounded-0"
-                    href="https://twitter.com/Wangnguyen01">Twitter</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item btn btn-outline-light rounded-0" href="find-waldo.html">Find Waldo :)</a>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#resumes">Resumes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#resumes">About</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown ml-auto">
+                        <a type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Miscellaneous</a>
+                        <div class="dropdown-menu dropdown-menu-left dropdown-custom mt-3">
+                            <a class="dropdown-item text-light" href="https://github.com/quangnguyen17"
+                                target="_blank">GitHub</a>
+                            <a class="dropdown-item text-light" href="https://www.linkedin.com/in/quangnguyen2001/"
+                                target="_blank">LinkedIn</a>
+                            <a class="dropdown-item text-light" href="https://www.instagram.com/quangd_nguyen/"
+                                target="_blank">Instagram</a>
+                            <a class="dropdown-item text-light" href="https://twitter.com/Wangnguyen01"
+                                target="_blank">Twitter</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-light" href="find-waldo.html">Find Waldo
+                                :)</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active text-center">
-                <img src="nightlife.jpg">
-                <div class="center container-fluid m-0 p-0 bg-trans">
-                    <div class="row h-full align-items-center">
-                        <div class="col text-light">
-                            <h1 class="m-0 font-weight-bold display-1">QUANG NGUYEN</h1>
-                            <h2 class="mx-0 mt-0 mb-3">iOS Developer | Web Developer</h2>
-                            <code class="text-light custom-code">&#60;&#33;&#45;&#45; #coding &#45;&#45;&#62;</code>
-                        </div>
-                    </div>
+    <div class="container-fluid bg-dark h-full">
+        <div class="row h-100 bg-wang text-center align-items-center text-light">
+            <div class="text-box">
+                <h1 class="display-1">QUANG NGUYEN</h1>
+                <h2>Software Developer (iOS & Web)</h2>
+                <div class="links mt-5">
+                    <a class="text-light" href="https://www.instagram.com/quangd_nguyen/" target="_blank"><i
+                            class="fab fa-instagram fa-3x"></i></a>
+                    <a class="text-light mx-3" href="https://github.com/quangnguyen17" target="_blank"><i
+                            class="fab fa-github-alt fa-3x"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/in/quangnguyen2001/" target="_blank"><i
+                            class="fab fa-linkedin-in fa-3x"></i></a>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="work.jpg">
-                <div class="center container-fluid m-0 p-0 bg-trans">
-                    <div class="row h-full align-items-center">
-                        <div class="col text-light">
-                            <h5>Project board is still under construction!</h5>
-                            <p>In the meantime, you can check out my Find Waldo. Click the 'Random' button to find out.
-                            </p>
-                        </div>
-                    </div>
+        </div>
+        <div class="row mt-5 mb-0 text-center" id="projects">
+            <div class="col">
+                <div class="text-light">
+                    <h1>Projects</h1>
+                    <p class="m-0">GitHub: <a class="text-secondary" href="https://github.com/quangnguyen17"
+                            target="_blank">https://github.com/quangnguyen17</a>
+                    </p>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="wang.jpg">
-                <div class="center container-fluid m-0 p-0 bg-trans-dark">
-                    <div class="row h-full align-items-center">
-                        <div class="col text-light">
-                            <h1 class="m-0 font-weight-bold display-3">QUANG NGUYEN</h1>
-                            <h2 class="mx-0 mt-0 mb-3">iOS Developer | Web Developer</h2>
-                            <p class="px-5 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-                                accusantium vitae odio
-                                sint, doloremque obcaecati perferendis, qui hic at consectetur possimus sequi
-                                dignissimos, blanditiis labore ut tenetur dicta dolore minima?</p>
-                            <a
-                                href="https://docs.google.com/document/d/1uCO6xavkAcmPusYNCzgKgrK51qrvVq7g23LmPDB4mwI/edit"><code
-                                    class="text-light custom-code">&#35; iOS Dev. Resume .</code><br></a>
-                            <a
-                                href="https://docs.google.com/document/d/1_uznigpMNJfjp69a4AntVCmOCb1DhDL9Is0fZbWOKw8/edit#heading=h.n64fgzu3lwuy"><code
-                                    class="text-light custom-code">&#35; General Resume .</code></a>
-                        </div>
-                        <div class="col">
-                            <ul class="list-inline text-light">
-                                <li>
-                                    <p><code class="text-light">&#60;Programming Languages&#62;</code></p>
-                                    <h3 class="font-weight-bold"><span>Swift</span> <span class="mx-3">Javascript</span>
-                                        <span>Python</span> <span class="mx-3">Java</span> <span>C++</span></h3>
-                                </li>
-                                <li class="my-5">
-                                    <p><code class="text-light">&#60;Front End&#62;</code></p>
-                                    <h3 class="font-weight-bold"><span>HTML5</span><span class="mx-3">CSS3</span>
-                                        <span>LESS</span><span class="mx-3">Bootstrap</span><span
-                                            class="mr-3">jQuery</span><span>AJAX</span></h3>
-                                </li>
-                                <li>
-                                    <p><code class="text-light">&#60;Back End&#62;</code></p>
-                                    <h3 class="font-weight-bold"><span>Django</span></h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        </div>
+        <div class="row text-center align-items-stretch p-5">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1 text-center">
+                <div class="content bg-dark text-light p-5">
+                    <h2>Doogy!</h2>
+                    <p class="text-secondary">(February 2020)</p>
+                    <p>A place where dog enthusiasts can be who they are and find thousands of dog pictures being
+                        fetched from a public API in which hosts one of the biggest collections of open source dog
+                        pictures.</p>
+                    <li>API: https://dog.ceo/dog-api/</li>
+                    <li>Technologies: HTML5, CSS3, jQuery & Javascript, AJAX, Python & Django.</li>
+                    <li class="mb-4">Database: SQLite.</li>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-1">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-1">See Project</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1 text-center">
+                <div class="content bg-dark text-light p-5">
+                    <h2>Find Waldo</h2>
+                    <p class="text-secondary">(January 2020)</p>
+                    <li>An open-source project.</li>
+                    <li>Re-inventing the classic 'Find Waldo' game on the web!</li>
+                    <li class="mb-4">Technologies: HTML5, CSS3 & Animations, Bootstrap, jQuery & Javascript.</li>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-1">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-1">See Project</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 p-1 text-center">
+                <div class="content bg-dark text-light p-5">
+                    <h2>Kinh Thánh BD2011</h2>
+                    <p class="text-secondary">(June 2018 – July 2018)</p>
+                    <li>A Bible App</li>
+                    <li>Technologies: Swift, UIKit, Grand Central Dispatch (GCD).</li>
+                    <li class="mb-4">Database: Core Data, Firebase.</li>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-1">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-1">See Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="row h-full text-center">
+            <div class="col-md-5 col-sm-12 bg-work h-100 text-center text-light align-items-center">
+                <div class="text px-5">
+                    <h1 class="mb-1">Software Developer </h1>
+                    <h3>(Full Stack Web & iOS)</h3>
+                    <p class="mt-5">"Self-taught software developer based in Orange County, California, specialized in
+                        building and
+                        designing full-stack web apps and high-performance native apps for mobile devices. 2 years of
+                        experience in working with clients to develop and transform ideas into real-world applications
+                        that satisfy their needs."</p>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12 bg-skills h-100 text-center text-light align-items-center">
+                <ul class="list-inline">
+                    <li>
+                        <p class="mt-5 mb-1">- LANGUAGES -</p>
+                        <h3><span>Swift</span><span class="mx-3">Javascript</span><span>Python</span><span
+                                class="ml-3">C#</span></p>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1">- FRONTEND -</p>
+                        <h3><span>HTML5</span><span class="mx-3">CSS3</span><span>Bootstrap</span><span
+                                class="ml-3">jQuery</span><span class="ml-3">AJAX</span></p>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1">- BACKEND -</p>
+                        <h3><span>Django</span><span class="ml-3">Node.js</span></p>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1">- DATABASES -</p>
+                        <h3><span>SQLite</span><span class="mx-3">MySQL</span><span>Firebase</span><span
+                                class="ml-3">Core Data</span></p>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1">- APPLE FRAMEWORKS -</p>
+                        <h3><span>Core Location</span><span class="mx-3">Core ML</span><span>Vision</span><span
+                                class="ml-3">MapKit</span><span class="ml-3">SwiftUI</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row p-0 my-5 text-center" id="resumes">
+            <div class="col">
+                <div class="text-light">
+                    <h1>Get In Touch</h1>
+                    <ul class="list-inline">
+                        <li>Mobile: (714) 585-3564</li>
+                        <li>Email: wan15112001@gmail.com</li>
+                        <li>GitHub: github.com/quangnguyen17</li>
+                        <li>Instagram: @quangd_nguyen</li>
+                        <li>LinkedIn: @quangnguyen2001</li>
+                    </ul>
                 </div>
             </div>
         </div>
