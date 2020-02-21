@@ -96,3 +96,39 @@ $(document).ready(function () {
     startTimer();
 });
 
+function isPalindrome(queue) {
+    var size = queue.size();
+
+    if (size < 1) {
+        return false;
+    }
+
+    stack = new Stack();
+    isPalindrome = true;
+
+    function iterate(callBack) {
+        for (var i in size) {
+            first = queue.deQueue();
+
+            if (callBack) {
+                callBack(first);
+            }
+
+            queue.enQueue(first);
+        }
+    }
+
+    iterate(function (first) {
+        stack.push(first);
+    });
+
+    iterate(function (first) {
+        last = stack.pop();
+
+        if (first == last) {
+            isPalindrome = false;
+        }
+    });
+
+    return isPalindrome;
+}
