@@ -18,21 +18,35 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/8199b614e7.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
     <link rel="stylesheet" href="style1.css">
-    <script>
-    </script>
-    <title>Quang Nguyen</title>
-    <script>
-        $(document).on('click', function (event) {
-            event.preventDefault();
-            href = $(event.target).attr('href');
-            top = $(`${href}`).offset().top;
+    <style>
+        .row.display-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-            $('html, body').animate({
-                scrollTop: $(href).offset().top - 56
-            }, 1000, 'linear');
+        .row.display-flex>[class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script>
+        $(document).ready(() => {
+            // $('.col-md-6').matchHeight(false);
+
+            $(document).on('click', function (event) {
+                event.preventDefault();
+                href = $(event.target).attr('href');
+                top = $(`${href}`).offset().top;
+
+                $('html, body').animate({
+                    scrollTop: $(href).offset().top - 56
+                }, 1000, 'linear');
+            });
         });
     </script>
+    <title>Quang Nguyen</title>
 </head>
 
 <body>
@@ -46,32 +60,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="http://13.52.102.43/" target="_blank">Doogy!</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#resumes">Resumes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#resumes">About</a>
-                </li>
-                <li class="nav-item">
-                    <div class="dropdown ml-auto">
-                        <a type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Miscellaneous</a>
-                        <div class="dropdown-menu dropdown-menu-left dropdown-custom mt-3">
-                            <a class="dropdown-item text-light" href="https://github.com/quangnguyen17"
-                                target="_blank">GitHub</a>
-                            <a class="dropdown-item text-light" href="https://www.linkedin.com/in/quangnguyen2001/"
-                                target="_blank">LinkedIn</a>
-                            <a class="dropdown-item text-light" href="https://www.instagram.com/quangd_nguyen/"
-                                target="_blank">Instagram</a>
-                            <a class="dropdown-item text-light" href="https://twitter.com/Wangnguyen01"
-                                target="_blank">Twitter</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-light" href="find-waldo.html">Find Waldo
-                                :)</a>
-                        </div>
-                    </div>
+                    <a class="nav-link" href="/find-waldo.html" target="_blank">Find Waldo :)</a>
                 </li>
             </ul>
         </div>
@@ -101,81 +93,137 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center m-0 p-5">
-            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1 text-center">
-                <div class="content text-light border border-light p-5">
-                    <h2>Doogy!</h2>
-                    <p class="text-secondary">(February 2020)</p>
-                    <p>A place where dog enthusiasts can be who they are and find thousands of dog pictures being
+        <div class="row m-0 p-5 text-left">
+            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
+                <div class="text-light p-5 border border-light">
+                    <h3 class="m-0">Doogy!</h3>
+                    <p class="text-secondary"><small>(February 2020)</small> <span
+                            class="badge badge-dark font-weight-light">#social</span>
+                    </p>
+                    <p>"A place where dog enthusiasts can be who they are and find thousands of dog pictures being
                         fetched from a public API in which hosts one of the biggest collections of open source dog
-                        pictures.</p>
-                    <li>API: https://dog.ceo/dog-api/</li>
-                    <li>Technologies: HTML5, CSS3, jQuery & Javascript, AJAX, Python & Django.</li>
-                    <li class="mb-4">Database: SQLite.</li>
-                    <button class="btn btn-sm btn-outline-light rounded-0 mt-1">View Source Code</button>
-                    <button class="btn btn-sm btn-light rounded-0 mt-1">See Project</button>
+                        pictures."</p>
+                    <span>API: https://dog.ceo/dog-api/</span><br>
+                    <span>Technologies: HTML5, CSS3, jQuery & Javascript, AJAX, Python & Django.</span><br>
+                    <span>Database: SQLite.</span><br>
+                    <span>Deployment: AWS</span><br>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-5">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-5">See Project</button>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1 text-center">
-                <div class="content text-light border border-light p-5">
-                    <h2>Find Waldo</h2>
-                    <p class="text-secondary">(January 2020)</p>
-                    <li>An open-source project.</li>
-                    <li>Re-inventing the classic 'Find Waldo' game on the web!</li>
-                    <li class="mb-4">Technologies: HTML5, CSS3 & Animations, Bootstrap, jQuery & Javascript.</li>
-                    <button class="btn btn-sm btn-outline-light rounded-0 mt-1">View Source Code</button>
-                    <button class="btn btn-sm btn-light rounded-0 mt-1">See Project</button>
+            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
+                <div class="text-light p-5 border border-light">
+                    <h3 class="m-0">Lost&Found</h3>
+                    <p class="text-secondary"><small>(February 2020)</small> <span
+                            class="badge badge-dark font-weight-light">#social</span></p>
+                    <span>Designed & Built an in-house lost and found web app for students & instructors at Coding
+                        Dojo.</span><br>
+                    <span>In collaboration with <span><a class="text-light" href="#">DojoAfterDark</a></span></span><br>
+                    <span>Technologies: HTML5, CSS3, jQuery, AJAX, Python, Django.</span><br>
+                    <span>Database: SQLite.</span><br>
+                    <span>Deployment: GitHub & AWS</span><br>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-5">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-5">See Project</button>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1 text-center">
-                <div class="content text-light border border-light p-5">
-                    <h2>Kinh Thánh BD2011</h2>
-                    <p class="text-secondary">(June 2018 – July 2018)</p>
-                    <li>A Bible App</li>
-                    <li>Technologies: Swift, UIKit, Grand Central Dispatch (GCD).</li>
-                    <li class="mb-4">Database: Core Data, Firebase.</li>
-                    <button class="btn btn-sm btn-outline-light rounded-0 mt-1">View Source Code</button>
-                    <button class="btn btn-sm btn-light rounded-0 mt-1">See Project</button>
+            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
+                <div class="text-light p-5 border border-light">
+                    <h3 class="m-0">Find Waldo</h3>
+                    <p class="text-secondary"><small>(January 2020)</small> <span
+                            class="badge badge-dark font-weight-light">#game</span></p>
+                    <span>An open-source project.</span><br>
+                    <span>Re-inventing the classic 'Find Waldo' game on the web!</span><br>
+                    <span>Technologies: HTML5, CSS3 & Animations, Bootstrap, jQuery & Javascript.</span><br>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-5">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-5">See Project</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
+                <div class="text-light p-5 border border-light">
+                    <h3 class="m-0">Bingopedia</h3>
+                    <p class="text-secondary"><small>(February 2020 - Present)</small> <span
+                            class="badge badge-dark font-weight-light">#game</span></p>
+                    <span>A bingo game.</span><br>
+                    <span>The app that will fetch words related to a keyword and present a bingo board with 25 words
+                        that are subwords to the keyword.</span><br>
+                    <span>Use cases include lectures, presentations, speeches...just pop in their keyword and play
+                        alongas they go on.</span><br>
+                    <span>Technologies: HTML5, CSS3, Bootstrap, jQuery, AJAX, Python & Django, Javascript.</span><br>
+                    <span>Database: SQLite</span><br>
+                    <span>Deployment: GitHub & AWS</span><br>
+                    <p class="text-secondary m-0 mt-5">(Project is currently in development)</p>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-2">View Project on GitHub</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
+                <div class="text-light p-5 border border-light">
+                    <h3 class="m-0">Kinh Thánh BD2011</h3>
+                    <p class="text-secondary"><small>(June 2018 – July 2018)</small> <span
+                            class="badge badge-dark font-weight-light">#book</span></p>
+                    <span>A Bible App</span><br>
+                    <span>Technologies: Swift, UIKit, Grand Central Dispatch (GCD).</span><br>
+                    <span>Database: Core Data, Firebase.</span><br>
+                    <span>Deployment: App Store</span><br>
+                    <button class="btn btn-sm btn-outline-light rounded-0 mt-5">View Source Code</button>
+                    <button class="btn btn-sm btn-light rounded-0 mt-5">See Project</button>
                 </div>
             </div>
         </div>
         <div class="row h-full m-0 p-0 text-center">
             <div class="col-md-5 col-sm-12 bg-work h-100 text-center text-light align-items-center">
                 <div class="text px-5">
-                    <h1 class="mb-1">Software Developer </h1>
-                    <h3>(Full Stack Web & iOS)</h3>
-                    <p class="mt-5">"Self-taught software developer based in Orange County, California, specialized in
+                    <h2>Software Developer </h2>
+                    <h6>- Full Stack Web & iOS -</h6>
+                    <p class="mt-5">Self-taught software developer based in Orange County, California,
+                        specialized in
                         building and
-                        designing full-stack web apps and high-performance native apps for mobile devices. 2 years of
-                        experience in working with clients to develop and transform ideas into real-world applications
-                        that satisfy their needs."</p>
+                        designing full-stack web apps and high-performance native apps for mobile devices. 2 years
+                        of
+                        experience in working with clients to develop and transform ideas into real-world
+                        applications
+                        that satisfy their needs.</p>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12 bg-skills h-100 text-center text-light align-items-center">
-                <ul class="list-inline">
+                <ul class="list-inline m-0">
                     <li>
-                        <p class="mt-5 mb-1">- LANGUAGES -</p>
-                        <h3><span>Swift</span><span class="mx-3">Javascript</span><span>Python</span><span
-                                class="ml-3">C#</span></p>
+                        <p class="mt-5 mb-1"><small>- LANGUAGES -</small></p>
+                        <h4 class="m-0"><span>Swift</span><span class="mx-3">Javascript</span><span>Python</span><span
+                                class="ml-3">C#</span>
+                        </h4>
                     </li>
                     <li>
-                        <p class="mt-5 mb-1">- FRONTEND -</p>
-                        <h3><span>HTML5</span><span class="mx-3">CSS3</span><span>Bootstrap</span><span
-                                class="ml-3">jQuery</span><span class="ml-3">AJAX</span></p>
+                        <p class="mt-5 mb-1"><small>- FRONTEND -</small></p>
+                        <h4 class="m-0"><span>HTML5</span><span class="mx-3">CSS3</span><span>Bootstrap</span><span
+                                class="ml-3">jQuery</span><span class="ml-3">AJAX</span></h4>
                     </li>
                     <li>
-                        <p class="mt-5 mb-1">- BACKEND -</p>
-                        <h3><span>Django</span><span class="ml-3">Node.js</span></p>
+                        <p class="mt-5 mb-1"><small>- BACKEND -</small></p>
+                        <h4 class="m-0"><span>Django</span><span class="ml-3">Node.js</span></h4>
                     </li>
                     <li>
-                        <p class="mt-5 mb-1">- DATABASES -</p>
-                        <h3><span>SQLite</span><span class="mx-3">MySQL</span><span>Firebase</span><span
-                                class="ml-3">Core Data</span></p>
+                        <p class="mt-5 mb-1"><small>- DATABASES -</small></p>
+                        <h4 class="m-0"><span>SQLite</span><span class="mx-3">MySQL</span><span>Firebase</span><span
+                                class="ml-3">Core Data</span></h4>
                     </li>
                     <li>
-                        <p class="mt-5 mb-1">- APPLE FRAMEWORKS -</p>
-                        <h3><span>Core Location</span><span class="mx-3">Core ML</span><span>Vision</span><span
-                                class="ml-3">MapKit</span><span class="ml-3">SwiftUI</span></p>
+                        <p class="mt-5 mb-1"><small>- APPLE FRAMEWORKS -</small></p>
+                        <h4 class="m-0"><span>Core Location</span><span class="mx-3">Core
+                                ML</span><span>Vision</span><span class="ml-3">MapKit</span><span
+                                class="ml-3">SwiftUI</span></h4>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1"><small>- DEPLOYMENT -</small></p>
+                        <h4 class="m-0"><span class="mr-2">AWS</span><span class="ml-2">App Store</span></h4>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1"><small>- VERSION CONTROL -</small></p>
+                        <h4 class="m-0"><span>Git</span></h4>
+                    </li>
+                    <li>
+                        <p class="mt-5 mb-1"><small>- SOFTWARES -</small></p>
+                        <h4 class="m-0"><span>Visual Studio Code</span><span
+                                class="mx-3">Xcode</span><span>GitHub</span></h4>
                     </li>
                 </ul>
             </div>
@@ -184,27 +232,24 @@
             <div class="col-md-6 col-sm-12">
                 <div class="text-light">
                     <h1 class="mb-3">Get In Touch</h1>
-                    <ul class="list-inline">
-                        <li>Mobile: (714) 585-3564</li>
-                        <li>Email: wan15112001@gmail.com</li>
-                        <li>GitHub: github.com/quangnguyen17</li>
-                        <li>Instagram: @quangd_nguyen</li>
-                        <li>LinkedIn: @quangnguyen2001</li>
-                    </ul>
+                    <span>Mobile: (714) 585-3564</span><br>
+                    <span>Email: wan15112001@gmail.com</span><br>
+                    <span>GitHub: @quangnguyen17</span><br>
+                    <span>Instagram: @quangd_nguyen</span><br>
+                    <span>LinkedIn: @quangnguyen2001</span>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 align-items-center">
                 <div class="text-light">
-                    <h1 class="mb-3">Resumes</h1>
-                    <ul class="list-inline">
-                        <li><a class="nav-link text-light m-0 p-0"
-                                href="https://www.slideshare.net/slideshow/embed_code/key/I5DRyUj2QVZTBF"
-                                target="_blank">Soft. Dev.
-                                Resume</a>
-                        </li>
-                        <li><a class="nav-link text-light m-0 p-0"
-                                href="https://docs.google.com/document/d/1_uznigpMNJfjp69a4AntVCmOCb1DhDL9Is0fZbWOKw8/edit#heading=h.x8fm1uorkbaw">General
-                                Resume</a></li>
+                    <h1 class="mb-3">My Resumes</h1>
+                    <a class="btn btn-outline-light m-0 p-2 rounded-0"
+                        href="https://www.slideshare.net/slideshow/embed_code/key/I5DRyUj2QVZTBF"
+                        target="_blank">Software
+                        Engineer Resume
+                    </a><br>
+                    <a class="btn btn-outline-light m-0 p-2 mt-2 rounded-0"
+                        href="https://docs.google.com/document/d/1_uznigpMNJfjp69a4AntVCmOCb1DhDL9Is0fZbWOKw8/edit#heading=h.x8fm1uorkbaw">General
+                        Resume</a>
                 </div>
             </div>
         </div>

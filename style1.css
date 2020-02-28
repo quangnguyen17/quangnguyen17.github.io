@@ -11,6 +11,14 @@
 
 body {
     background-color: black;
+    scroll-behavior: smooth;
+}
+
+.align-items-start {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+    display: flex;
+    justify-content: start;
 }
 
 .align-items-center {
@@ -18,10 +26,6 @@ body {
     align-items: center!important;
     display: flex;
     justify-content: center;
-}
-
-body {
-    scroll-behavior: smooth;
 }
 
 .navbar {
@@ -61,8 +65,4 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.h-250 {
-    height: 250px;
 }
