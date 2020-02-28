@@ -18,34 +18,20 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/8199b614e7.js" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
-    <link rel="stylesheet" href="style1.css">
-    <style>
-        .row.display-flex {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .row.display-flex>[class*='col-'] {
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
     <script>
-        $(document).ready(() => {
-            // $('.col-md-6').matchHeight(false);
+        scrollToBottom = () => {
+            $('html, body').animate({
+                scrollTop: document.body.scrollHeight
+            }, 1750);
+        };
 
-            $(document).on('click', function (event) {
-                event.preventDefault();
-                href = $(event.target).attr('href');
-                top = $(`${href}`).offset().top;
-
-                $('html, body').animate({
-                    scrollTop: $(href).offset().top - 56
-                }, 1000, 'linear');
-            });
-        });
+        scrollToProjects = () => {
+            $('html, body').animate({
+                scrollTop: document.querySelector('.row').scrollHeight
+            }, 750);
+        };
     </script>
+    <link rel="stylesheet" href="style1.css">
     <title>Quang Nguyen</title>
 </head>
 
@@ -60,7 +46,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://13.52.102.43/" target="_blank">Doogy!</a>
+                    <a onclick="scrollToProjects()" class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://13.52.102.43" target="_blank">Doogy!</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/find-waldo.html" target="_blank">Find Waldo :)</a>
@@ -83,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 m-0 p-0 text-center" id="projects">
+        <div id="projects-row" class="row mt-5 m-0 p-0 text-center" id="projects">
             <div class="col">
                 <div class="text-light">
                     <h1>Projects</h1>
@@ -93,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="row m-0 p-5 text-left">
+        <div class="row m-0 p-5">
             <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
                 <div class="text-light p-5 border border-light">
                     <h3 class="m-0">Doogy!</h3>
@@ -119,7 +108,7 @@
                     <span>Designed & Built an in-house lost and found web app for students & instructors at Coding
                         Dojo.</span><br>
                     <span>In collaboration with <span><a class="text-light" href="#">DojoAfterDark</a></span></span><br>
-                    <span>Technologies: HTML5, CSS3, jQuery, AJAX, Python, Django.</span><br>
+                    <span>Technologies: HTML5, CSS3, Bootstrap, jQuery, AJAX, Python, Django.</span><br>
                     <span>Database: SQLite.</span><br>
                     <span>Deployment: GitHub & AWS</span><br>
                     <button class="btn btn-sm btn-outline-light rounded-0 mt-5">View Source Code</button>
@@ -166,6 +155,19 @@
                     <span>Deployment: App Store</span><br>
                     <button class="btn btn-sm btn-outline-light rounded-0 mt-5">View Source Code</button>
                     <button class="btn btn-sm btn-light rounded-0 mt-5">See Project</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 m-0 p-1">
+                <div class="text-light p-5 border border-light">
+                    <h3 class="m-0"><i>Have an idea?</i></h3>
+                    <p class="text-secondary"><span class="badge badge-dark font-weight-light">#freelance</span> <span
+                            class="badge badge-dark font-weight-light">#contract</span> <span
+                            class="badge badge-dark font-weight-light">#collaboration</span></p>
+                    <span>Have an app idea? but don't know where to start?</span><br>
+                    <span>Want to make iOS Apps?</span><br>
+                    <span>Want to make Web Apps?</span><br>
+                    <button onclick="scrollToBottom()" class="btn btn-sm btn-outline-light rounded-0 mt-5">Let's make
+                        something special!</button>
                 </div>
             </div>
         </div>
@@ -228,10 +230,10 @@
                 </ul>
             </div>
         </div>
-        <div class="row p-0 m-0 my-5 text-center align-items-center" id="resumes">
+        <div id="last-row" class="row p-0 m-0 my-5 text-center align-items-center" id="resumes">
             <div class="col-md-6 col-sm-12">
                 <div class="text-light">
-                    <h1 class="mb-3">Get In Touch</h1>
+                    <h1 class="mb-4">Get In Touch</h1>
                     <span>Mobile: (714) 585-3564</span><br>
                     <span>Email: wan15112001@gmail.com</span><br>
                     <span>GitHub: @quangnguyen17</span><br>
@@ -241,14 +243,15 @@
             </div>
             <div class="col-md-6 col-sm-12 align-items-center">
                 <div class="text-light">
-                    <h1 class="mb-3">My Resumes</h1>
-                    <a class="btn btn-outline-light m-0 p-2 rounded-0"
+                    <h1 class="mb-4">My Resumes</h1>
+                    <a class="btn btn-sm btn-outline-light m-0 p-2 rounded-0"
                         href="https://www.slideshare.net/slideshow/embed_code/key/I5DRyUj2QVZTBF"
                         target="_blank">Software
                         Engineer Resume
                     </a><br>
-                    <a class="btn btn-outline-light m-0 p-2 mt-2 rounded-0"
-                        href="https://docs.google.com/document/d/1_uznigpMNJfjp69a4AntVCmOCb1DhDL9Is0fZbWOKw8/edit#heading=h.x8fm1uorkbaw">General
+                    <a class="btn btn-sm btn-outline-light m-0 p-2 mt-2 rounded-0"
+                        href="https://docs.google.com/document/d/1_uznigpMNJfjp69a4AntVCmOCb1DhDL9Is0fZbWOKw8/edit#heading=h.x8fm1uorkbaw"
+                        target="_blank">General
                         Resume</a>
                 </div>
             </div>

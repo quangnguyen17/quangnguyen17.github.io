@@ -21,6 +21,11 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Find Waldo</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body class="bg-black" style="background-image: none;">
@@ -32,25 +37,22 @@
                 </div>
             </div>
             <div class="col-3 w-25 bg-dark-gray h-full d-inline-block text-center p-5 text-light overflow-auto">
-                <h1 class="font-weight-bold mb-0">Find Waldo!</h1>
-                <img id="waldo" class="mt-4 mb-2" src="waldo.jpg" alt="">
-                <p>"Waldo: Find me."</p>
+                <h1 id="heading" class="font-weight-bold mb-0">Find Waldo!</h1>
+                <img id="waldo" class="mt-4 mb-2" src="images/waldo.jpg" alt="" style="object-fit: contain;">
+                <p id="wald-text">"Waldo: Find me! :)"</p>
                 <h3 class="timer font-weight-light my-4">0s</h3>
                 <div class="btns">
                     <button id="worst" class="btn btn-outline-danger rounded-0 score-button my-1">Worst</button>
                     <button id="average" class="btn btn-outline-warning rounded-0 score-button my-1">Average</button>
                     <button id="best" class="btn btn-outline-success rounded-0 score-button my-1">Best</button>
                 </div>
-                <table class="table table-striped bg-clear text-light my-4">
-                    <thead>
-                        <tr>
-                            <th scope="col">Round</th>
-                            <th scope="col">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+
+                <ul id="stats" class="list-inline my-5">
+                    <li>
+                        <h2>Stats</h2>
+                    </li>
+                    <li class="mb-3">&#60;Round&#62; &#60;Time&#62;</li>
+                </ul>
                 <footer class="justify-content-center">
                     <h6 class="mt-5 text-secondary">&copy;Quang Nguyen</h6>
                     <a class="nav-link text-secondary font-italic border border-dark d-inline-block"

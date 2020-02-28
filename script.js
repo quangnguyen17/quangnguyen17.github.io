@@ -2,6 +2,12 @@
 var time = 0;
 var timeTable = [];
 
+var isWaldo = true;
+var characters = {
+    waldo: 'images/waldo.jpg',
+    potato: 'images/potato.jpg'
+}
+
 function getStats(timeArr) {
     var min = timeArr[0], max = timeArr[0], sum = timeArr[0];
     var count = 1;
@@ -12,7 +18,7 @@ function getStats(timeArr) {
         }
 
         if (timeArr[index] < min) {
-            min = timeArr[index]
+            min = timeArr[index];
         }
 
         sum += timeArr[index];
@@ -37,16 +43,17 @@ function startTimer() {
 }
 
 function waldoClicked() {
+    isWaldo = !isWaldo;
+
+    $('#heading').text(`Find ${isWaldo ? 'Waldo' : 'Potato'}`);
+    $('#wald-text').text(`"${isWaldo ? 'Waldo' : 'Potato'}: ${isWaldo ? 'find' : 'eat'} me! :)"`);
+    $('#waldo').attr('src', isWaldo ? characters.waldo : characters.potato);
+
     draw();
     timeTable.push(time);
     time = 0;
 
-    var tableRow = `<tr>
-        <th scope="row" class="font-weight-normal">${timeTable.length}</th>
-        <th class="font-weight-light">${displayTime(timeTable[timeTable.length - 1])}</th>
-    </tr>`;
-
-    $('tbody').append(tableRow);
+    $('#stats').append(`<li class="btn btn-dark rounded-0 px-4 py-2 my-1">#${timeTable.length}  -  ${displayTime(timeTable[timeTable.length - 1])}</li><br>`);
 
     var scoreRatings = getStats(timeTable);
     for (var key in scoreRatings) {
@@ -66,7 +73,7 @@ function draw() {
 
         for (var col = 0; col < 20; col++) {
             var waldo = (col == x && row == y) ? "waldo" : "blank";
-            code += `<div class="col bg-${waldo} show-waldo m-0 p-0"></div>`;
+            code += `<div id="character-box" class="col bg-${waldo} show-waldo m-0 p-0" style="background-image: url(${isWaldo ? characters.waldo : characters.potato});"></div>`;
         }
 
         code += `</div>`;
@@ -82,53 +89,16 @@ function handleHovering() {
         $(this).animate({
             opacity: "1",
             height: "+=10",
-        }, 300)
+        }, 250)
     }, function () {
         $(this).animate({
             opacity: "0",
             height: "-=10",
-        }, 300);
+        }, 250);
     });
 }
 
-$(document).ready(function () {
+$(document).ready(() => {
     draw();
     startTimer();
 });
-
-function isPalindrome(queue) {
-    var size = queue.size();
-
-    if (size < 1) {
-        return false;
-    }
-
-    stack = new Stack();
-    isPalindrome = true;
-
-    function iterate(callBack) {
-        for (var i in size) {
-            first = queue.deQueue();
-
-            if (callBack) {
-                callBack(first);
-            }
-
-            queue.enQueue(first);
-        }
-    }
-
-    iterate(function (first) {
-        stack.push(first);
-    });
-
-    iterate(function (first) {
-        last = stack.pop();
-
-        if (first == last) {
-            isPalindrome = false;
-        }
-    });
-
-    return isPalindrome;
-}

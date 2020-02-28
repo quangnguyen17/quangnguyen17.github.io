@@ -70,9 +70,10 @@ body {
 }
 
 .bg-waldo {
-    background-image: url('waldo.jpg');
+    background-color: white;
+    background-image: url('images/waldo.jpg');
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     width: 5vh;
     height: 5vh;
