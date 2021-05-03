@@ -1,4 +1,4 @@
-# portfolio-site
+# quangnguyen17.github.io
 
-- Built using HTML5, CSS3, Bootstrap, jQuery & Javascript.
-- https://quangnguyen17.github.io/
+-   Portfolio: https://quangnguyen17.github.io/index.html
+-   Find Waldo: https://quangnguyen17.github.io/find-waldo.html
