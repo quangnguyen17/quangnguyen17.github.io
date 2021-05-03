@@ -1,4 +1,4 @@
 # quangnguyen17.github.io
 
-- Portfolio: quangnguyen17.github.io/index.html
-- Find Waldo: quangnguyen17.github.io/find-waldo.html
+- Portfolio: https://quangnguyen17.github.io/index.html
+- Find Waldo: https://quangnguyen17.github.io/find-waldo.html
