@@ -2,10 +2,10 @@
 
 * {
     color: white;
-    font-family: 'Fira Code', monospace;
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
 }
 
 body {
@@ -13,11 +13,11 @@ body {
 }
 
 pre {
-    margin-top: 3.5rem;
     white-space: pre-wrap; /* Since CSS 2.1 */
     white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
     white-space: -pre-wrap; /* Opera 4-6 */
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* Internet Explorer 5.5+ */
-    font-size: 11px;
+    text-align: center; /* center text */
+    font-size: 11px; /* font size to 11 pixels */
 }
